@@ -14,22 +14,27 @@ public class Principal {
 		
 		Caixa cx1 = new Caixa();//Instânciando minha classe 'Caixa'
 		
+		/*Execute as operações, enquanto o usuário não desejar sair*/
 		do {
-			op = JOptionPane.showOptionDialog(null, "Escolha a operação a se fazer", "DS_Bank", -1, -1, logo, ope, ope[0]);
+			op = JOptionPane.showOptionDialog(null, "Escolha a operação a se fazer", "DS_Bank", -1, -1, logo, ope, ope[0]);//Apresentando opções de operações ao Usuário
 			switch(op) {
 			
-			case 1: 
+			case 1: //Entrar com valor ao saldo
 				cx1.entrar();
 				break;
-			case 2:
+				
+			case 2://Retirar um valor do saldo
 				cx1.retirar();
 				break;
-			case 3:
+				
+			case 3://Consultar atual saldo
 				JOptionPane.showMessageDialog(null, "Seu saldo atual é de: R$:" + cx1.getSaldo(), "DS_Bank", -1, logo);
 				break;
-			default:
+				
+			default://Encerrar sistema
 				JOptionPane.showMessageDialog(null, "Sistema ecerrando...\nVolte sempre!!!", "DS_Bank", -1, logo);
+				break;
 			}
-		}while(op !=0);
+		}while(op >0);//Obtem-se um valor menor que >=0 clicando nas opções de saída
 	} 
 }
